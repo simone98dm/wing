@@ -1,39 +1,99 @@
-/*=============================
+/* =============================
   Button
-=============================*/
+============================= */
+button, [type=submit] {
+  height: 45px;
+  margin-bottom: base;
+  padding: 10px 30px;
+  outline: none;
+  text-decoration: none;
+  font-size: typography-size-base;
 
-button, .button, [type=submit]
-  height: 45px
+  // color: color-white
+  // background: color-black
+  // border-round(color-black)
+  // transition: transition
+  &:hover, &:focus {
+    opacity: 0.9;
+  }
 
-  margin-bottom: base
-  padding: 10px 30px
+  &:active {
+    opacity: 0.7;
+  }
 
-  outline: none
-  text-decoration: none
+  &[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
 
-  color: color-white
-  font-size: typography-size-base
+  &.outline {
+    color: color-black;
+    background: none;
 
-  background: color-black
+    &:hover, &:focus {
+      color: color-white;
+      background: color-black;
+    }
+  }
+}
 
-  border-round(color-black)
+button.dark {
+  background: color-black;
+  color: color-white;
+  border-round(color-black);
+}
 
-  transition: transition
+button.primary {
+  color: color-white;
+  background: color-blue;
+  border-round(color-blue);
+}
 
-  &:hover, &:focus
-    opacity: .9
+button.error {
+  color: color-white;
+  background: color-red;
+  border-round(color-red);
+}
 
-  &:active
-    opacity: .7
+button.warning {
+  color: color-black;
+  background: color-yellow;
+  border-round(color-yellow);
+}
 
-  &[disabled]
-    opacity: 0.8
-    cursor: not-allowed
+button.success {
+  color: color-white;
+  background: color-green;
+  border-round(color-green);
+}
 
-  &.outline
-    color: color-black
-    background: none
+button.btn-sm {
+  height: 30px;
+  margin-bottom: base;
+  padding: 5px 15px;
+  outline: none;
+  text-decoration: none;
+  font-size: typography-size-base;
+  &:hover, &:focus {
+    opacity: 0.9;
+  }
 
-    &:hover, &:focus
-      color: color-white
-      background: color-black
+  &:active {
+    opacity: 0.7;
+  }
+
+  &[disabled] {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+
+  &.outline {
+    color: color-black;
+    background: none;
+
+    &:hover, &:focus {
+      color: color-white;
+      background: color-black;
+    }
+  }
+}

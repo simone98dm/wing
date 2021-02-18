@@ -1,18 +1,37 @@
-/*=============================
+/* =============================
   Card
-=============================*/
+============================= */
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: base;
+  border-round(color-gray);
 
-.card
-  display: flex
-  flex-direction: column
-  margin-bottom: base
-  border-round(color-gray)
+  .card-header {
+    margin: 5px 15px;
+  }
 
-  .card-content
-    margin: 0
-    padding: base
+  .card-subtitle {
+    margin: 0 15px;
+    color: color-gray;
+  }
 
-  .card-image
-    display: block
-    height: auto
-    width: 100%
+  .card-body {
+    margin: 15px;
+  }
+
+  .card-content {
+    margin: 0;
+    padding: base;
+  }
+
+  .card-image {
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+
+.card-smooth {
+  border-smooth();
+}

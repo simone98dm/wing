@@ -1,18 +1,38 @@
-/*=============================
+/* =============================
   List
-=============================*/
+============================= */
+ul, ol {
+  margin-top: 0;
+  margin-bottom: base;
+  padding-left: 0;
+  list-style-position: inside;
 
-ul, ol
-  margin-top: 0
-  margin-bottom: base
-  padding-left: 0
-  list-style-position: inside
+  li {
+    margin-bottom: base;
 
-  li
-    margin-bottom: base
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-    &:last-child
-      margin-bottom: 0
+  ul, ol {
+    margin-left: base;
+  }
+}
 
-  ul, ol
-    margin-left: base
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 0.25rem;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}

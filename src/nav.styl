@@ -1,18 +1,20 @@
-/*=============================
+/* =============================
   Navigation
-=============================*/
+============================= */
+.nav {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: base;
+  padding-bottom: base;
 
-.nav
-  position: relative
-  display: flex
-  flex-wrap: wrap
-  align-items: center
-  justify-content: space-between
-  padding-top: base
-  padding-bottom: base
+  .nav-item {
+    margin-right: base;
 
-  .nav-item
-    margin-right: base
-
-    &:last-child
-      margin-right: 0
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
