@@ -15,7 +15,26 @@ const comment = `/**
  */\r\n`;
 
 gulp.task("build", function () {
-  return gulp.src(["./src/config.styl", "./src/base.styl", "./src/grid.styl", "./src/typography.styl", "./src/form.styl", "./src/button.styl", "./src/link.styl", "./src/list.styl", "./src/image.styl", "./src/box.styl", "./src/nav.styl", "./src/card.styl", "./src/code.styl", "./src/divider.styl", "./src/util.styl", "./src/shadow.styl"])
+  return gulp
+    .src([
+      "./src/config.styl",
+      "./src/base.styl",
+      "./src/grid.styl",
+      "./src/typography.styl",
+      "./src/form.styl",
+      "./src/button.styl",
+      "./src/link.styl",
+      "./src/list.styl",
+      "./src/image.styl",
+      "./src/box.styl",
+      "./src/nav.styl",
+      "./src/card.styl",
+      "./src/code.styl",
+      "./src/divider.styl",
+      "./src/util.styl",
+      "./src/shadow.styl",
+      "./src/tags.styl",
+    ])
     .pipe(concat("wing.styl"))
     .pipe(stylus())
     .pipe(header(comment + "\r\n"))
@@ -23,22 +42,23 @@ gulp.task("build", function () {
     .pipe(gulp.dest("./dist/"));
 });
 
-gulp.task("minify", ["build"], function() {
-  return gulp.src(["./dist/wing.css"])
+gulp.task("minify", ["build"], function () {
+  return gulp
+    .src(["./dist/wing.css"])
     .pipe(minifyCSS())
     .pipe(header(comment))
     .pipe(size())
-    .pipe(size({
-      gzip: true
-    }))
+    .pipe(
+      size({
+        gzip: true,
+      })
+    )
     .pipe(concat("wing.min.css"))
     .pipe(gulp.dest("./dist/"));
 });
 
-
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   gulp.watch(["src/*.css"], ["default"]);
 });
-
 
 gulp.task("default", ["build", "minify"]);

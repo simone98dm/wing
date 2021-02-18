@@ -5,9 +5,9 @@
  * http://usewing.ml
  */
 
-/*=============================
+/* =============================
   Base Styles
-=============================*/
+============================= */
 * {
   box-sizing: border-box;
 }
@@ -21,11 +21,11 @@ body {
   color: #111;
   font-size: 16px;
   font-weight: 400;
-  font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir, 'Avenir Next', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
-/*=============================
+/* =============================
   Grid
-=============================*/
+============================= */
 .container {
   width: 80%;
   max-width: 960px;
@@ -43,7 +43,7 @@ body {
 }
 .row .col {
   flex-grow: 1;
-  flex-basis: 0;
+  flex-basis: 0%;
 }
 .row .col-1 {
   width: 8.333333333333332%;
@@ -84,14 +84,14 @@ body {
 @media screen and (max-width: 768px) {
   .row .col,
   .row [class^='col-'],
-  .row [class*=" col-"] {
+  .row [class*=' col-'] {
     flex-grow: 0;
     flex-basis: 100%;
   }
 }
-/*=============================
+/* =============================
   Typography
-=============================*/
+============================= */
 h1,
 h2,
 h3,
@@ -101,7 +101,7 @@ h6,
 p {
   margin-top: 0;
   margin-bottom: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir, 'Avenir Next', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 h1,
 h2,
@@ -158,9 +158,9 @@ p {
     font-size: 18.08px;
   }
 }
-/*=============================
+/* =============================
   Form
-=============================*/
+============================= */
 input[type=text],
 input[type=password],
 input[type=email],
@@ -209,61 +209,106 @@ textarea:focus {
 textarea {
   min-height: 70px;
 }
-/*=============================
+/* =============================
   Button
-=============================*/
+============================= */
 button,
-.button,
 [type=submit] {
   height: 45px;
   margin-bottom: 16px;
   padding: 10px 30px;
   outline: none;
   text-decoration: none;
-  color: #f5f5f5;
   font-size: 16px;
-  background: #111;
-  border: 1px solid #111;
-  border-radius: 2px;
-  transition: all 0.2s ease;
 }
 button:hover,
-.button:hover,
 [type=submit]:hover,
 button:focus,
-.button:focus,
 [type=submit]:focus {
   opacity: 0.9;
 }
 button:active,
-.button:active,
 [type=submit]:active {
   opacity: 0.7;
 }
 button[disabled],
-.button[disabled],
 [type=submit][disabled] {
   opacity: 0.8;
   cursor: not-allowed;
 }
 button.outline,
-.button.outline,
 [type=submit].outline {
   color: #111;
   background: none;
 }
 button.outline:hover,
-.button.outline:hover,
 [type=submit].outline:hover,
 button.outline:focus,
-.button.outline:focus,
 [type=submit].outline:focus {
   color: #f5f5f5;
   background: #111;
 }
-/*=============================
+button.dark {
+  background: #111;
+  color: #f5f5f5;
+  border: 1px solid #111;
+  border-radius: 2px;
+}
+button.primary {
+  color: #f5f5f5;
+  background: #0062ff;
+  border: 1px solid #0062ff;
+  border-radius: 2px;
+}
+button.error {
+  color: #f5f5f5;
+  background: #ff1500;
+  border: 1px solid #ff1500;
+  border-radius: 2px;
+}
+button.warning {
+  color: #111;
+  background: #ffbf00;
+  border: 1px solid #ffbf00;
+  border-radius: 2px;
+}
+button.success {
+  color: #f5f5f5;
+  background: #00b30f;
+  border: 1px solid #00b30f;
+  border-radius: 2px;
+}
+button.btn-sm {
+  height: 30px;
+  margin-bottom: 16px;
+  padding: 5px 15px;
+  outline: none;
+  text-decoration: none;
+  font-size: 16px;
+}
+button.btn-sm:hover,
+button.btn-sm:focus {
+  opacity: 0.9;
+}
+button.btn-sm:active {
+  opacity: 0.7;
+}
+button.btn-sm[disabled] {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+button.btn-sm.outline {
+  color: #111;
+  background: none;
+}
+button.btn-sm.outline:hover,
+button.btn-sm.outline:focus {
+  color: #f5f5f5;
+  background: #111;
+}
+/* =============================
   Link
-=============================*/
+============================= */
 a {
   color: #0062ff;
   transition: all 0.2s ease;
@@ -272,9 +317,9 @@ a:hover {
   cursor: pointer;
   color: #111;
 }
-/*=============================
+/* =============================
   List
-=============================*/
+============================= */
 ul,
 ol {
   margin-top: 0;
@@ -296,16 +341,31 @@ ul ol,
 ol ol {
   margin-left: 16px;
 }
-/*=============================
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  border-radius: 2px;
+}
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid 1px;
+}
+/* =============================
   Image
-=============================*/
+============================= */
 img {
   margin-top: 0;
   margin-bottom: 16px;
 }
-/*=============================
+/* =============================
   Box
-=============================*/
+============================= */
 .box {
   margin-bottom: 16px;
   padding-top: 16px;
@@ -314,9 +374,9 @@ img {
   border: 1px solid #a7a7a7;
   border-radius: 2px;
 }
-/*=============================
+/* =============================
   Navigation
-=============================*/
+============================= */
 .nav {
   position: relative;
   display: flex;
@@ -332,15 +392,25 @@ img {
 .nav .nav-item:last-child {
   margin-right: 0;
 }
-/*=============================
+/* =============================
   Card
-=============================*/
+============================= */
 .card {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
   border: 1px solid #a7a7a7;
   border-radius: 2px;
+}
+.card .card-header {
+  margin: 16px 16px 0 16px;
+}
+.card .card-subtitle {
+  margin: 0 16px;
+  color: #a7a7a7;
+}
+.card .card-body {
+  margin: 16px;
 }
 .card .card-content {
   margin: 0;
@@ -351,37 +421,59 @@ img {
   height: auto;
   width: 100%;
 }
-/*=============================
+/* =============================
   Code
-=============================*/
+============================= */
 pre {
   margin-top: 0;
   margin-bottom: 16px;
 }
 pre code {
   display: block;
-  padding: 16px;
+  padding: 4px;
   white-space: pre-wrap;
   word-wrap: break-word;
 }
 code {
-  padding: 2px;
-  white-space: nowrap;
-  background: #e7e7e7;
-  border: 1px solid #d7d7d7;
+  background: #fcf2f2;
   border-radius: 2px;
-  font-family: "Consolas", "Monaco", "Menlo", monospace;
+  color: #d73e48;
+  font-size: 85%;
+  line-height: 1.25;
+  padding: 0.1rem 0.2rem;
 }
-/*=============================
+.code {
+  border-radius: 2px;
+  color: #3b4351;
+  position: relative;
+}
+.code::before {
+  color: #bcc3ce;
+  content: attr(data-lang);
+  font-size: 0.7rem;
+  position: absolute;
+  right: 0.4rem;
+  top: 0.1rem;
+}
+.code code {
+  background: #f7f8f9;
+  color: inherit;
+  display: block;
+  line-height: 1.5;
+  overflow-x: auto;
+  padding: 1rem;
+  width: 100%;
+}
+/* =============================
   Divider
-=============================*/
+============================= */
 hr {
   border-width: 0.5px;
   border-color: #a7a7a7;
 }
-/*=============================
+/* =============================
   Utilities
-=============================*/
+============================= */
 .position-relative {
   position: relative;
 }
@@ -472,6 +564,9 @@ hr {
 .border-circle {
   border-radius: 2px;
 }
+.border-smooth {
+  border-radius: 2px;
+}
 .color-black {
   color: #111;
 }
@@ -513,4 +608,44 @@ hr {
 }
 .background-green {
   background-color: #00b30f;
+}
+/* =============================
+  Shadow
+============================= */
+.shadow {
+  box-shadow: 0 0.35rem 0.75rem rgba(0,0,0,0.15);
+}
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+}
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
+}
+.shadow-none {
+  box-shadow: none;
+}
+span.tags {
+  padding: 8px;
+  font-size: 70%;
+  border: 1px solid color-grey;
+}
+span.tags.primary {
+  background: rgba(0,98,255,0.3);
+  color: #111;
+}
+span.tags.dark {
+  background: rgba(17,17,17,0.3);
+  color: #111;
+}
+span.tags.success {
+  background: rgba(0,179,15,0.3);
+  color: #111;
+}
+span.tags.error {
+  background: rgba(255,21,0,0.3);
+  color: #111;
+}
+span.tags.warning {
+  background: rgba(255,191,0,0.3);
+  color: #111;
 }
